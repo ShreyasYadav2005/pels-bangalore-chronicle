@@ -13,14 +13,14 @@ const Header = () => {
   return (
     <header className="w-full bg-white border-b border-border">
       {/* Top Navigation */}
-      <div className="w-full bg-muted py-2">
+      <div className="w-full py-2" style={{ backgroundColor: 'hsl(195 100% 39%)' }}>
         <div className="container mx-auto px-4">
-          <nav className="flex justify-center space-x-6">
+          <nav className="flex justify-start space-x-6">
             {topNavLinks.map((link) => (
               <a 
                 key={link}
                 href="#" 
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-white hover:text-white/80 transition-colors"
               >
                 {link}
               </a>

@@ -40,7 +40,8 @@ All colors MUST be HSL.
     /* IEEE specific colors */
     --ieee-blue: 217 91% 35%;
     --ieee-light-blue: 217 91% 45%;
-    --ieee-nav-blue: 217 91% 25%;
+    --ieee-nav-blue: 195 100% 39%; /* Updated to match the uploaded blue */
+    --ieee-top-nav-blue: 195 100% 39%; /* Same blue for top navigation */
     --ieee-gray: 210 11% 96%;
 
     --radius: 0.5rem;

@@ -29,9 +29,9 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
   ];
 
   return (
-    <nav className="w-full bg-primary text-white sticky top-0 z-50">
+    <nav className="w-full text-white sticky top-0 z-50" style={{ backgroundColor: 'hsl(195 100% 39%)' }}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center space-x-8 py-4">
+        <div className="flex items-center justify-start space-x-8 py-4">
           {navItems.map((item) => (
             <button
               key={item.id}
