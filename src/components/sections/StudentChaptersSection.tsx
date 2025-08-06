@@ -7,43 +7,35 @@ const StudentChaptersSection = () => {
   const chapters = [
     {
       id: 1,
-      name: "IISc Bangalore IEEE PELS Student Branch",
-      university: "Indian Institute of Science",
-      members: 45,
-      established: "2018",
-      achievements: ["Best Student Chapter Award 2023", "Outstanding Activity Award 2022"],
-      activities: ["Technical Workshops", "Research Seminars", "Industry Visits"],
-      contact: "iiscpels@ieee.org"
+      collegeName: "Indian Institute of Science",
+      branchCode: "IISc-PELS-001",
+      facultyAdvisor: "Dr. Rajesh Kumar",
+      chair: "Ananya Sharma",
+      viceChair: "Karthik Menon"
     },
     {
       id: 2,
-      name: "IIT Bangalore IEEE PELS Student Branch",
-      university: "Indian Institute of Technology",
-      members: 38,
-      established: "2019",
-      achievements: ["Innovation Award 2023", "Research Excellence Award 2022"],
-      activities: ["Project Competitions", "Guest Lectures", "Lab Sessions"],
-      contact: "iitbpels@ieee.org"
+      collegeName: "Indian Institute of Technology Bangalore",
+      branchCode: "IITB-PELS-002", 
+      facultyAdvisor: "Dr. Priya Nair",
+      chair: "Vikram Reddy",
+      viceChair: "Sneha Patel"
     },
     {
       id: 3,
-      name: "PES University IEEE PELS Student Branch",
-      university: "PES University",
-      members: 52,
-      established: "2020",
-      achievements: ["Most Active Chapter 2023", "Student Engagement Award 2022"],
-      activities: ["Coding Competitions", "Technical Talks", "Internship Programs"],
-      contact: "pespels@ieee.org"
+      collegeName: "PES University",
+      branchCode: "PESU-PELS-003",
+      facultyAdvisor: "Dr. Suresh Babu",
+      chair: "Arjun Krishna",
+      viceChair: "Deepika Rao"
     },
     {
       id: 4,
-      name: "BMS College IEEE PELS Student Branch",
-      university: "BMS College of Engineering",
-      members: 33,
-      established: "2021",
-      achievements: ["Emerging Chapter Award 2023"],
-      activities: ["Study Groups", "Conference Participation", "Community Outreach"],
-      contact: "bmspels@ieee.org"
+      collegeName: "BMS College of Engineering",
+      branchCode: "BMSCE-PELS-004",
+      facultyAdvisor: "Dr. Lakshmi Devi",
+      chair: "Rohit Singh",
+      viceChair: "Preethi Kumari"
     }
   ];
 
@@ -82,51 +74,31 @@ const StudentChaptersSection = () => {
         </div>
 
         {/* Student Chapters */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {chapters.map((chapter) => (
             <Card key={chapter.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex justify-between items-start mb-2">
-                  <Badge variant="secondary">Est. {chapter.established}</Badge>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Users className="h-4 w-4 mr-1" />
-                    <span>{chapter.members} Members</span>
-                  </div>
-                </div>
-                <CardTitle className="text-lg">{chapter.name}</CardTitle>
-                <p className="text-muted-foreground">{chapter.university}</p>
+                <CardTitle className="text-lg text-primary">{chapter.collegeName}</CardTitle>
               </CardHeader>
-              <CardContent>
-                {/* Achievements */}
-                <div className="mb-4">
-                  <h4 className="font-semibold text-sm text-primary mb-2">Recent Achievements</h4>
-                  <div className="space-y-1">
-                    {chapter.achievements.map((achievement, index) => (
-                      <Badge key={index} variant="outline" className="mr-2 mb-1">
-                        {achievement}
-                      </Badge>
-                    ))}
-                  </div>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="text-sm font-medium text-foreground">Branch Code:</p>
+                  <p className="text-sm text-muted-foreground">{chapter.branchCode}</p>
                 </div>
-
-                {/* Activities */}
-                <div className="mb-4">
-                  <h4 className="font-semibold text-sm text-primary mb-2">Key Activities</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    {chapter.activities.map((activity, index) => (
-                      <li key={index}>• {activity}</li>
-                    ))}
-                  </ul>
+                
+                <div>
+                  <p className="text-sm font-medium text-foreground">Faculty Advisor:</p>
+                  <p className="text-sm text-muted-foreground">{chapter.facultyAdvisor}</p>
                 </div>
-
-                {/* Contact */}
-                <div className="pt-4 border-t">
-                  <p className="text-xs text-muted-foreground mb-3">
-                    Contact: {chapter.contact}
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Learn More
-                  </Button>
+                
+                <div>
+                  <p className="text-sm font-medium text-foreground">Chair:</p>
+                  <p className="text-sm text-muted-foreground">{chapter.chair}</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-medium text-foreground">Vice Chair:</p>
+                  <p className="text-sm text-muted-foreground">{chapter.viceChair}</p>
                 </div>
               </CardContent>
             </Card>
