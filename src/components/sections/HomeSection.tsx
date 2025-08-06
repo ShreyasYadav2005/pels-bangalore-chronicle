@@ -1,114 +1,45 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Calendar, Users, Award, BookOpen } from "lucide-react";
+import ImageCarousel from "@/components/ImageCarousel";
 
 const HomeSection = () => {
   return (
     <section id="home" className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-            Welcome to IEEE PELS Bangalore
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            The IEEE Power Electronics Society (PELS) Bangalore Section is committed to advancing 
-            the field of power electronics through education, research, and professional development.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Join IEEE PELS
-            </Button>
-            <Button variant="outline" size="lg">
-              Learn More
-            </Button>
-          </div>
+        {/* Hero Image Carousel */}
+        <div className="mb-16">
+          <ImageCarousel />
         </div>
 
-        {/* Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-          <Card className="text-center">
-            <CardContent className="p-6">
-              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-primary mb-2">500+</h3>
-              <p className="text-muted-foreground">Active Members</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="text-center">
-            <CardContent className="p-6">
-              <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-primary mb-2">50+</h3>
-              <p className="text-muted-foreground">Events Annually</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="text-center">
-            <CardContent className="p-6">
-              <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-primary mb-2">25+</h3>
-              <p className="text-muted-foreground">Awards Won</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="text-center">
-            <CardContent className="p-6">
-              <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-primary mb-2">100+</h3>
-              <p className="text-muted-foreground">Research Papers</p>
-            </CardContent>
-          </Card>
-        </div>
+        {/* Content Section based on uploaded image */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg p-8 shadow-sm border">
+            <h2 className="text-2xl font-bold text-foreground mb-6">The Power Electronics Society</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              The <strong>Power Electronics Society</strong> is one of the fastest-growing technical societies of the Institute of Electrical and 
+              Electronics Engineers (IEEE). For over 20 years, PELS has facilitated and guided the development and innovation of 
+              power electronics technology. This technology encompasses the effective use of electronic components, the application 
+              of circuit theory and design techniques, and the development of analytical tools toward efficient conversion, control, 
+              and condition of electric power. Our members include preeminent researchers, practitioners, and distinguished award 
+              winners. IEEE PELS publishes the IEEE Transactions on Power Electronics, a top-referenced journal among all IEEE 
+              publications.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-foreground mb-4">The Power Electronics Society is dedicated to</h3>
+            <p className="text-muted-foreground leading-relaxed mb-8 italic">
+              Keeping its members around the globe up to date on state-of-the-art technological developments and advances in 
+              power electronics research and upholding the vital scientific and educational aspects of power electronics and its 
+              applications
+            </p>
 
-        {/* About Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-3xl font-bold text-primary mb-6">About IEEE PELS Bangalore</h3>
-            <p className="text-muted-foreground mb-6">
-              The IEEE Power Electronics Society (PELS) is dedicated to the advancement of power 
-              electronics technology. Our Bangalore section serves as a hub for professionals, 
-              researchers, and students in the field of power electronics.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              We organize technical conferences, workshops, seminars, and networking events to 
-              foster collaboration and knowledge sharing among our members. Our activities span 
-              across various domains including renewable energy systems, electric vehicles, 
-              power converters, and smart grid technologies.
-            </p>
-            <Button className="bg-primary hover:bg-primary/90">
-              Explore Our Mission
-            </Button>
-          </div>
-          
-          <div className="bg-muted rounded-lg p-8">
-            <h4 className="text-xl font-semibold text-primary mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  → Membership Benefits
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  → Technical Publications
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  → Conference Proceedings
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  → Student Activities
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  → Industry Partnerships
-                </a>
-              </li>
-            </ul>
+            <div className="border-t pt-6">
+              <h3 className="text-xl font-semibold text-foreground mb-4">IEEE Power Electronics Society Bangalore Chapter</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                IEEE PELS Bengaluru Chapter got its official approval on 13th March 2017. The Geo-code is CH10805 with 22 Senior Members, 23 
+                Student Members, 28 Regular Members, and 73 PELS Members under the IEEE Bangalore Chapter.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Inauguration Ceremony Was Held On 21st May 2017 in The Department of Electrical Engineering at IISC Bangalore.
+              </p>
+            </div>
           </div>
         </div>
       </div>

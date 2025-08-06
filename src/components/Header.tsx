@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SearchModal from "@/components/SearchModal";
 
 const Header = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  
   const topNavLinks = [
     "IEEE.org",
     "IEEE Xplore Digital Library", 
@@ -33,21 +37,25 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Left: IEEE PELS Logo Placeholder */}
-          <div className="flex items-center space-x-4">
-            <div className="w-16 h-16 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">PELS</span>
+          <div className="flex items-center space-x-6">
+            <div className="w-20 h-20 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-base">PELS</span>
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-primary">
+              <h1 className="text-2xl md:text-4xl font-bold text-primary">
                 IEEE PELS Bangalore
               </h1>
-              <p className="text-sm text-muted-foreground">Power Electronics Society</p>
+              <p className="text-sm md:text-base text-muted-foreground">Power Electronics Society</p>
             </div>
           </div>
 
           {/* Right: Search and IEEE Logo */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => setIsSearchOpen(true)}
+            >
               <Search className="h-5 w-5" />
             </Button>
             <div className="w-20 h-16 bg-primary rounded flex items-center justify-center">
@@ -56,6 +64,11 @@ const Header = () => {
           </div>
         </div>
       </div>
+      
+      <SearchModal 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)} 
+      />
     </header>
   );
 };

@@ -115,42 +115,6 @@ const WhyJoinSection = () => {
           ))}
         </div>
 
-        {/* Membership Types */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-primary mb-8 text-center">
-            Membership Options
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {membershipTypes.map((membership, index) => (
-              <Card key={index} className={`relative ${index === 1 ? 'border-primary border-2' : ''}`}>
-                {index === 1 && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                <CardContent className="p-6 text-center">
-                  <h4 className="text-xl font-semibold text-foreground mb-2">{membership.type}</h4>
-                  <div className="text-3xl font-bold text-primary mb-6">{membership.price}</div>
-                  <ul className="space-y-3 mb-6">
-                    {membership.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="text-sm text-muted-foreground">
-                        ✓ {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    className={`w-full ${index === 1 ? 'bg-primary hover:bg-primary/90' : ''}`}
-                    variant={index === 1 ? 'default' : 'outline'}
-                  >
-                    Join Now
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
 
         {/* Call to Action */}
         <div className="bg-primary rounded-lg p-8 text-center text-white">
@@ -158,12 +122,10 @@ const WhyJoinSection = () => {
           <p className="text-lg mb-6 opacity-90">
             Take the next step in your career and become part of the global IEEE PELS family.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
-              Apply for Membership
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              Learn More
+          <div className="flex justify-center">
+            {/* TODO: Add IEEE membership link here */}
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-3">
+              Join IEEE
             </Button>
           </div>
         </div>

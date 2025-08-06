@@ -1,86 +1,78 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Clock, Users } from "lucide-react";
+import { Calendar, MapPin, Users } from "lucide-react";
+import EventModal from "@/components/EventModal";
 
 const EventsSection = () => {
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Power Electronics Conference 2024",
-      date: "March 15-17, 2024",
-      location: "IISc Bangalore",
-      time: "9:00 AM - 5:00 PM",
-      attendees: "200+",
-      type: "Conference",
-      description: "Annual conference featuring latest research in power electronics and renewable energy systems."
-    },
-    {
-      id: 2,
-      title: "Workshop on Electric Vehicle Technologies",
-      date: "April 8, 2024",
-      location: "IISC Bangalore",
-      time: "10:00 AM - 4:00 PM",
-      attendees: "100+",
-      type: "Workshop",
-      description: "Hands-on workshop covering EV charging systems, battery management, and power conversion."
-    },
-    {
-      id: 3,
-      title: "IEEE PELS Distinguished Lecture",
-      date: "April 22, 2024",
-      location: "Virtual Event",
-      time: "3:00 PM - 5:00 PM",
-      attendees: "150+",
-      type: "Lecture",
-      description: "Distinguished lecture on Advanced Power Converter Topologies by Dr. John Smith."
-    }
-  ];
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
   const pastEvents = [
     {
-      id: 4,
-      title: "Smart Grid Technologies Symposium",
-      date: "January 20, 2024",
-      location: "IIT Bangalore",
+      id: 1,
+      title: "EV PowerTech 2023",
+      date: "November 15, 2023",
+      location: "IISc Bangalore",
+      attendees: "250",
+      type: "Conference",
+      description: "International conference on electric vehicle power technologies and charging infrastructure.",
+      fullDescription: "The EV PowerTech 2023 conference brought together leading researchers, industry experts, and academia to discuss the latest developments in electric vehicle power technologies. The event featured keynote speeches, technical sessions, and industry exhibitions covering topics such as battery management systems, wireless charging, fast charging infrastructure, and power electronics for EVs. Participants included representatives from major automotive companies, battery manufacturers, and research institutions.",
+      images: [
+        "/lovable-uploads/7fbda470-00ed-4e15-9efb-a0b5fd8a078b.png",
+        "/lovable-uploads/7fbda470-00ed-4e15-9efb-a0b5fd8a078b.png"
+      ]
+    },
+    {
+      id: 2,
+      title: "Bangalore e-Mobility Meet",
+      date: "September 22, 2023",
+      location: "IIIT Bangalore",
       attendees: "180",
-      type: "Symposium"
+      type: "Workshop",
+      description: "Industry-academia collaboration workshop on sustainable e-mobility solutions for smart cities.",
+      fullDescription: "The Bangalore e-Mobility Meet was a collaborative platform bringing together industry leaders, academic researchers, and government officials to discuss sustainable e-mobility solutions for smart cities. The workshop featured panel discussions on policy frameworks, technical presentations on charging infrastructure, and interactive sessions on future mobility trends. Key topics included autonomous electric vehicles, smart charging networks, and integration of renewable energy sources with e-mobility ecosystems.",
+      images: [
+        "/lovable-uploads/7fbda470-00ed-4e15-9efb-a0b5fd8a078b.png",
+        "/lovable-uploads/7fbda470-00ed-4e15-9efb-a0b5fd8a078b.png"
+      ]
     },
     {
-      id: 5,
-      title: "Student Paper Contest 2023",
-      date: "December 15, 2023",
-      location: "PES University",
-      attendees: "75",
-      type: "Contest"
-    },
-    {
-      id: 6,
-      title: "Industry-Academia Meet",
-      date: "November 30, 2023",
-      location: "Bangalore Tech Park",
-      attendees: "120",
-      type: "Networking"
+      id: 3,
+      title: "Smart Grid Conclave",
+      date: "August 10, 2023",
+      location: "IIT Bangalore",
+      attendees: "300",
+      type: "Symposium",
+      description: "Annual symposium on smart grid technologies, renewable energy integration, and grid modernization.",
+      fullDescription: "The Smart Grid Conclave 2023 was the premier event focusing on smart grid technologies and their role in India's energy transition. The symposium covered topics including grid modernization, demand response systems, microgrids, energy storage solutions, and cybersecurity in smart grids. Distinguished speakers from utilities, technology companies, and research institutions shared insights on implementing smart grid solutions, policy challenges, and future trends in grid technology. The event also featured live demonstrations of smart grid equipment and networking sessions for industry professionals.",
+      images: [
+        "/lovable-uploads/7fbda470-00ed-4e15-9efb-a0b5fd8a078b.png",
+        "/lovable-uploads/7fbda470-00ed-4e15-9efb-a0b5fd8a078b.png"
+      ]
     }
   ];
 
   return (
-    <section id="events" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary mb-4">Events</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join our technical events, workshops, and networking sessions to stay updated 
-            with the latest trends in power electronics.
-          </p>
-        </div>
+    <>
+      <section id="events" className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-primary mb-4">Previous Events</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Explore our past technical events, workshops, and conferences that have contributed 
+              to the advancement of power electronics in the region.
+            </p>
+          </div>
 
-        {/* Upcoming Events */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-primary mb-8">Upcoming Events</h3>
+          {/* Previous Events */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event) => (
-              <Card key={event.id} className="hover:shadow-lg transition-shadow">
+            {pastEvents.map((event) => (
+              <Card 
+                key={event.id} 
+                className="hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => setSelectedEvent(event)}
+              >
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <Badge variant="secondary">{event.type}</Badge>
@@ -96,41 +88,6 @@ const EventsSection = () => {
                       <span>{event.date}</span>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      <span>{event.location}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Users className="h-4 w-4 mr-2" />
-                      <span>{event.attendees} Expected</span>
-                    </div>
-                  </div>
-                  
-                  <Button className="w-full">Register Now</Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Past Events */}
-        <div>
-          <h3 className="text-2xl font-semibold text-primary mb-8">Past Events</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pastEvents.map((event) => (
-              <Card key={event.id} className="opacity-75 hover:opacity-100 transition-opacity">
-                <CardContent className="p-6">
-                  <Badge variant="outline" className="mb-3">{event.type}</Badge>
-                  <h4 className="font-semibold text-foreground mb-3">{event.title}</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
                       <MapPin className="h-4 w-4 mr-2" />
                       <span>{event.location}</span>
                     </div>
@@ -139,13 +96,26 @@ const EventsSection = () => {
                       <span>{event.attendees} Attendees</span>
                     </div>
                   </div>
+                  
+                  <Button className="w-full" variant="outline">
+                    View Details
+                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Event Modal */}
+      {selectedEvent && (
+        <EventModal
+          event={selectedEvent}
+          isOpen={!!selectedEvent}
+          onClose={() => setSelectedEvent(null)}
+        />
+      )}
+    </>
   );
 };
 

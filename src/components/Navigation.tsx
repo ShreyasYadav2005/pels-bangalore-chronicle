@@ -15,7 +15,7 @@ const Navigation = () => {
 
   const navItems = [
     { path: "/", label: "HOME" },
-    { path: "/events", label: "EVENTS" },
+    { path: "/events", label: "PREVIOUS EVENTS" },
     { path: "/student-chapters", label: "STUDENT BRANCH CHAPTERS" },
     { path: "/why-join", label: "WHY JOIN IEEE PELS?" },
   ];
