@@ -21,10 +21,10 @@ const Navigation = () => {
   ];
 
   const execomYears = [
-    { path: "/excom-2022", label: "EXCOM 2022" },
-    { path: "/excom-2023", label: "EXCOM 2023" },
-    { path: "/excom-2024", label: "EXCOM 2024" },
-    { path: "/excom-2025", label: "EXCOM 2025" },
+    { path: "/execom-2022", label: "EXECOM 2022" },
+    { path: "/execom-2023", label: "EXECOM 2023" },
+    { path: "/execom-2024", label: "EXECOM 2024" },
+    { path: "/execom-2025", label: "EXECOM 2025" },
   ];
 
   return (
@@ -43,14 +43,14 @@ const Navigation = () => {
             </Link>
           ))}
           
-          {/* EXCOM Dropdown */}
+          {/* EXECOM Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button 
                 variant="ghost" 
                 className="text-white hover:text-white hover:bg-white/10 font-medium text-sm"
               >
-                EXCOM-PELS
+                EXECOM-PELS
                 <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>

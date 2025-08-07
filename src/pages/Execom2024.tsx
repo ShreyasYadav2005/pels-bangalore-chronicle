@@ -1,19 +1,19 @@
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ExcomSection from "@/components/sections/ExcomSection";
+import ExecomSection from "@/components/sections/ExecomSection";
 
-const Excom2024 = () => {
+const Execom2024 = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <Navigation />
       <main>
-        <ExcomSection year="2024" />
+        <ExecomSection year="2024" />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Excom2024;
+export default Execom2024;

@@ -7,10 +7,10 @@ import Home from "./pages/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import Events from "./pages/Events";
 import EventDetails from "./pages/EventDetails";
-import Excom2022 from "./pages/Excom2022";
-import Excom2023 from "./pages/Excom2023";
-import Excom2024 from "./pages/Excom2024";
-import Excom2025 from "./pages/Excom2025";
+import Execom2022 from "./pages/Execom2022";
+import Execom2023 from "./pages/Execom2023";
+import Execom2024 from "./pages/Execom2024";
+import Execom2025 from "./pages/Execom2025";
 import StudentChapters from "./pages/StudentChapters";
 import WhyJoin from "./pages/WhyJoin";
 import NotFound from "./pages/NotFound";
@@ -28,10 +28,10 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:eventId" element={<EventDetails />} />
-          <Route path="/excom-2022" element={<Excom2022 />} />
-          <Route path="/excom-2023" element={<Excom2023 />} />
-          <Route path="/excom-2024" element={<Excom2024 />} />
-          <Route path="/excom-2025" element={<Excom2025 />} />
+          <Route path="/execom-2022" element={<Execom2022 />} />
+          <Route path="/execom-2023" element={<Execom2023 />} />
+          <Route path="/execom-2024" element={<Execom2024 />} />
+          <Route path="/execom-2025" element={<Execom2025 />} />
           <Route path="/student-chapters" element={<StudentChapters />} />
           <Route path="/why-join" element={<WhyJoin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -26,7 +26,7 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
     { type: "Event", title: "EV PowerTech 2023", content: "Electric vehicle power technologies conference", url: "/events" },
     { type: "Event", title: "Smart Grid Conclave", content: "Smart grid technologies symposium", url: "/events" },
     { type: "Content", title: "Power Electronics Society", content: "Learn about IEEE Power Electronics Society", url: "/" },
-    { type: "Content", title: "EXCOM Members", content: "Executive committee members information", url: "/excom-2025" },
+    { type: "Content", title: "EXECOM Members", content: "Executive committee members information", url: "/execom-2025" },
   ];
 
   const handleSearch = (query: string) => {

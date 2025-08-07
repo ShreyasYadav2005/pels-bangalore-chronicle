@@ -1,10 +1,10 @@
 import MemberCard from "@/components/MemberCard";
 
-interface ExcomSectionProps {
+interface ExecomSectionProps {
   year: string;
 }
 
-const ExcomSection = ({ year }: ExcomSectionProps) => {
+const ExecomSection = ({ year }: ExecomSectionProps) => {
   const getMembers = (year: string) => {
     const baseMembers = [
       {
@@ -90,10 +90,10 @@ const ExcomSection = ({ year }: ExcomSectionProps) => {
   const members = getMembers(year);
 
   return (
-    <section id={`excom-${year}`} className="py-16 bg-background">
+    <section id={`execom-${year}`} className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary mb-4">EXCOM {year}</h2>
+          <h2 className="text-4xl font-bold text-primary mb-4">EXECOM {year}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Meet the executive committee members who led IEEE PELS Bangalore in {year}
           </p>
@@ -116,4 +116,4 @@ const ExcomSection = ({ year }: ExcomSectionProps) => {
   );
 };
 
-export default ExcomSection;
+export default ExecomSection;
